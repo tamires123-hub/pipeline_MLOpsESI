@@ -1,0 +1,26 @@
+name: Criar release com modelo vencedor
+on:
+  schedule:
+    - cron: '20 8 * * 1'
+  push:
+    paths:
+      - 'modelos/modelo_vencendor.pkl'
+
+jobs:
+  criar_release:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v3
+
+    - name: Definir data e hora formatadas
+      id: datetime
+      run: echo "datetime_tag=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
+
+    - name: Criar release
+      uses: ncipollo/release-action@v1
+      with:
+          tag: modelo_vencedor-${{ steps.datetime.outputs.datetime_tag }}
+          name: Modelo Vencedor - ${{ steps.datetime.outputs.datetime_tag }}
+          artifacts: modelos/modelo_vencedor.pkl
