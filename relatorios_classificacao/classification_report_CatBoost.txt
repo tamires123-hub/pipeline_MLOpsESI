@@ -1,0 +1,11 @@
+Relatório do modelo: CatBoost
+
+              precision    recall  f1-score   support
+
+  Lucro alto       0.77      0.76      0.76       193
+ Lucro baixo       0.61      0.68      0.64       226
+    Prejuízo       0.48      0.40      0.44       147
+
+    accuracy                           0.63       566
+   macro avg       0.62      0.61      0.61       566
+weighted avg       0.63      0.63      0.63       566

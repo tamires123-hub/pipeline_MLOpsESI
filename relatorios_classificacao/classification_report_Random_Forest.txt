@@ -1,0 +1,11 @@
+Relatório do modelo: Random_Forest
+
+              precision    recall  f1-score   support
+
+  Lucro alto       0.76      0.74      0.75       193
+ Lucro baixo       0.61      0.68      0.65       226
+    Prejuízo       0.46      0.39      0.42       147
+
+    accuracy                           0.63       566
+   macro avg       0.61      0.61      0.61       566
+weighted avg       0.62      0.63      0.62       566
