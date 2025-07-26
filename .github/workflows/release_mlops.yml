@@ -4,7 +4,8 @@ on:
     - cron: '20 8 * * 1'
   push:
     paths:
-      - 'modelos/modelo_vencendor.pkl'
+      - 'modelos/modelo_vencedor.pkl'
+  workflow_dispatch:   # <-- Adicionado para rodar manualmente
 
 jobs:
   criar_release:
@@ -21,6 +22,6 @@ jobs:
       - name: Criar release
         uses: ncipollo/release-action@v1
         with:
-            tag: modelo_vencedor-${{ steps.datetime.outputs.datetime_tag }}
-            name: Modelo Vencedor - ${{ steps.datetime.outputs.datetime_tag }}
-            artifacts: modelos/modelo_vencedor.pkl
+          tag: modelo_vencedor-${{ steps.datetime.outputs.datetime_tag }}
+          name: Modelo Vencedor - ${{ steps.datetime.outputs.datetime_tag }}
+          artifacts: modelos/modelo_vencedor.pkl
