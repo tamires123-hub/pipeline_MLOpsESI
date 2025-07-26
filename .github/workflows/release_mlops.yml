@@ -4,8 +4,8 @@ on:
     - cron: '20 8 * * 1'
   push:
     paths:
-      - 'modelos/modelo_vencedor.pkl'
-  workflow_dispatch:   # <-- Adicionado para rodar manualmente
+      - 'modelo_vencedor/modelo_final_LightGBM.pkl'
+  workflow_dispatch: 
 
 jobs:
   criar_release:
@@ -24,4 +24,4 @@ jobs:
         with:
           tag: modelo_vencedor-${{ steps.datetime.outputs.datetime_tag }}
           name: Modelo Vencedor - ${{ steps.datetime.outputs.datetime_tag }}
-          artifacts: modelos/modelo_vencedor.pkl
+          artifacts: modelo_vencedor/modelo_final_LightGBM.pkl
