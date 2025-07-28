@@ -4,7 +4,7 @@ on:
     - cron: '20 8 * * 1'
   push:
     paths:
-      - 'modelo_vencedor/modelo_final_LightGBM.pkl'
+      - 'modelo_vencedor/melhor_modelo.pkl'
   workflow_dispatch: 
 
 jobs:
@@ -24,4 +24,4 @@ jobs:
         with:
           tag: modelo_vencedor-${{ steps.datetime.outputs.datetime_tag }}
           name: Modelo Vencedor - ${{ steps.datetime.outputs.datetime_tag }}
-          artifacts: modelo_vencedor/modelo_final_LightGBM.pkl
+          artifacts: modelo_vencedor/melhor_modelo.pkl
