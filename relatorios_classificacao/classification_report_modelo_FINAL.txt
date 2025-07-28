@@ -1,4 +1,4 @@
-Relatório do modelo: LightGBM
+Relatório do modelo: modelo_FINAL
 
               precision    recall  f1-score   support
 
