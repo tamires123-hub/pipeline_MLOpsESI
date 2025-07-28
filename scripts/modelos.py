@@ -212,9 +212,9 @@ def NCV_treinar_modelos_robustos(df, nome_alvo, colunas_numericas, colunas_oneho
     final_pipeline.set_params(**best_model_params)
     final_pipeline.fit(X_train, y_train)
 
-    avaliar_modelo_multiclasse(final_pipeline, X_test, y_test, f"{best_model_name}_FINAL")
-    joblib.dump(final_pipeline, f"modelo_vencedor/modelo_final_{best_model_name}.pkl")
-    print(f"Modelo final salvo como modelo_vencedor/modelo_final_{best_model_name}.pkl")
+    avaliar_modelo_multiclasse(final_pipeline, X_test, y_test, f"modelo_FINAL")
+    joblib.dump(final_pipeline, f"modelo_vencedor/melhor_modelo.pkl")
+    print(f"Modelo final salvo como modelo_vencedor/melhor_modelo.pkl")
 
     return df_resultados, final_pipeline, best_model_name
         
