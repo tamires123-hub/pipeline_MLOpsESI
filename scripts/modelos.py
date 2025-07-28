@@ -146,20 +146,20 @@ def NCV_treinar_modelos_robustos(df, nome_alvo, colunas_numericas, colunas_oneho
                 'classifier__max_depth': [None, 10, 20]
             },
             RandomizedSearchCV
-        ),
-        'Rede_Neural': (
-            MLPClassifier(max_iter=1000, random_state=random_state),
-            {
-                'classifier__hidden_layer_sizes': [(100, 50), (128, 64), (64, 32, 16)],
-                'classifier__activation': ['relu', 'tanh'],
-                'classifier__solver': ['adam', 'sgd'],
-                'classifier__alpha': [0.01, 0.001],
-                'classifier__batch_size': [128,64],
-                'classifier__learning_rate_init': [0.05, 0.001],
-                'classifier__momentum': [0.9, 0.95],
-            },
-            lambda *args, **kwargs: RandomizedSearchCV(*args, n_iter=n_iter_nn, **kwargs)
         )
+#        'Rede_Neural': (
+#            MLPClassifier(max_iter=1000, random_state=random_state),
+#            {
+#                'classifier__hidden_layer_sizes': [(100, 50), (128, 64), (64, 32, 16)],
+#                'classifier__activation': ['relu', 'tanh'],
+#                'classifier__solver': ['adam', 'sgd'],
+#                'classifier__alpha': [0.01, 0.001],
+#                'classifier__batch_size': [128,64],
+#                'classifier__learning_rate_init': [0.05, 0.001],
+#                'classifier__momentum': [0.9, 0.95],
+#            },
+#            lambda *args, **kwargs: RandomizedSearchCV(*args, n_iter=n_iter_nn, **kwargs)
+#        )
     }
 
     resultados = []
